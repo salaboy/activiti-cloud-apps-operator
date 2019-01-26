@@ -1,0 +1,9 @@
+apiVersion: "stable.cloud.activiti.org/v1"
+kind: RuntimeBundle
+metadata:
+  name: my-runtime-bundle
+  labels: 
+     app: my-app
+spec:
+  serviceName: "my-rb"
+  serviceVersion: "1.0"  

@@ -1,0 +1,7 @@
+apiVersion: "stable.cloud.activiti.org/v1"
+kind: Application
+metadata:
+  name: my-app
+spec:
+  version: "1.0"
+  selector: "my-app"
