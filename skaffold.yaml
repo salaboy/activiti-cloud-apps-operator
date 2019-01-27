@@ -1,0 +1,30 @@
+apiVersion: skaffold/v1beta2
+kind: Config
+build:
+  artifacts:
+  - image: changeme
+    context: .
+    docker: {}
+  tagPolicy:
+    envTemplate:
+      template: '{{.DOCKER_REGISTRY}}/salaboy/activiti-cloud-apps-operator:{{.VERSION}}'
+  local: {}
+deploy:
+  kubectl: {}
+profiles:
+- name: dev
+  build:
+    artifacts:
+    - docker: {}
+    tagPolicy:
+      envTemplate:
+        template: '{{.DOCKER_REGISTRY}}/salaboy/activiti-cloud-apps-operator:{{.DIGEST_HEX}}'
+    local: {}
+  deploy:
+    helm:
+      releases:
+      - name: activiti-cloud-apps-operator
+        chartPath: charts/activiti-cloud-apps-operator
+        setValueTemplates:
+          image.repository: '{{.DOCKER_REGISTRY}}/salaboy/activiti-cloud-apps-operator'
+          image.tag: '{{.DIGEST_HEX}}'
