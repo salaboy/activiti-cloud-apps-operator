@@ -70,7 +70,15 @@ rules:
 - apiGroups:
   - stable.cloud.activiti.org
   resources:
-  - activiti-cloud-apps
+  - applications
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - stable.cloud.activiti.org
+  resources:
+  - runtime-bundles
   verbs:
   - get
   - list
