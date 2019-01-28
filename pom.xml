@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.activiti.cloud.k8s</groupId>
     <artifactId>activiti-cloud-apps-operator</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.3</version>
     <name>Activiti Cloud :: Applications Operator</name>
     <description>Activiti Cloud :: Applications Operator</description>
     <properties>
