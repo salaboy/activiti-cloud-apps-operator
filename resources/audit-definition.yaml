@@ -1,0 +1,10 @@
+apiVersion: "stable.cloud.activiti.org/v1"
+kind: AuditService
+metadata:
+  name: my-audit-service
+  labels: 
+     app: my-app
+spec:
+  serviceName: "audit-service"
+  serviceVersion: "1.0"
+  

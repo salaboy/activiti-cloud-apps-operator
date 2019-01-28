@@ -1,0 +1,10 @@
+apiVersion: "stable.cloud.activiti.org/v1"
+kind: QueryService
+metadata:
+  name: my-query-service
+  labels: 
+     app: my-app
+spec:
+  serviceName: "query-service"
+  serviceVersion: "1.0"
+  

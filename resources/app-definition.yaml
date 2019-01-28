@@ -5,3 +5,12 @@ metadata:
 spec:
   version: "1.0"
   selector: "my-app"
+  modules:
+  - name: "my-runtime-bundle"
+    kind: RuntimeBundle
+  - name: "my-audit-service"
+    kind: AuditService
+  - name: "my-query-service"
+    kind: QueryService
+
+

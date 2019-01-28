@@ -1,0 +1,23 @@
+apiVersion: apiextensions.k8s.io/v1beta1 
+kind: CustomResourceDefinition
+metadata:
+  name: audit-services.stable.cloud.activiti.org
+spec:
+  group: stable.cloud.activiti.org 
+  version: v1 
+  scope: Namespaced 
+  names:
+    plural: audit-services
+    singular: audit-service
+    kind: AuditService
+    shortNames:
+    - audit
+  validation:
+    openAPIV3Schema:
+      properties:
+        spec:
+          properties:
+            serviceName:
+              type: string
+          required:
+            - serviceName

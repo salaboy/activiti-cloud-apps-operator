@@ -5,6 +5,8 @@ import com.fasterxml.jackson.databind.JsonDeserializer;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import io.fabric8.kubernetes.api.model.KubernetesResource;
 
+import java.util.List;
+
 @JsonDeserialize(
         using = JsonDeserializer.None.class
 )
@@ -13,6 +15,8 @@ public class ApplicationSpec implements KubernetesResource {
 
     private String version;
     private String selector;
+
+    private List<ModuleDescr> modules;
 
     public String getVersion() {
         return version;
@@ -30,11 +34,20 @@ public class ApplicationSpec implements KubernetesResource {
         this.selector = selector;
     }
 
+    public List<ModuleDescr> getModules() {
+        return modules;
+    }
+
+    public void setModules(List<ModuleDescr> modules) {
+        this.modules = modules;
+    }
+
     @Override
     public String toString() {
         return "ApplicationSpec{" +
                 "version='" + version + '\'' +
                 ", selector='" + selector + '\'' +
+                ", modules=" + modules +
                 '}';
     }
 }
