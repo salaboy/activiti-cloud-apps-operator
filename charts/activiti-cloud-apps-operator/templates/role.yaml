@@ -71,14 +71,9 @@ rules:
   - stable.cloud.activiti.org
   resources:
   - applications
-  verbs:
-  - get
-  - list
-  - watch
-- apiGroups:
-  - stable.cloud.activiti.org
-  resources:
   - runtime-bundles
+  - audit-services
+  - query-services
   verbs:
   - get
   - list
